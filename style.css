@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #95a5a6;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  max-width: 440px;
+  font-size: 18px;
+  margin: 0 auto;
+  background-color: #ecf0f1;
+  -webkit-box-shadow: 0px 0px 10px indigo;
+          box-shadow: 0px 0px 10px indigo;
+  text-align: center;
+}
+
+.app h1 {
+  font-size: 28px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.app button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  font-size: 20px;
+  margin: 0 15px;
+}
+
+.app p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/*# sourceMappingURL=style.css.map */
