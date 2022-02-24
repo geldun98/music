@@ -2,34 +2,138 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
 }
 body{
     background-color: #95a5a6;
 }
 .app{
+   
     width: 100%;
     height: 100vh;
     max-width: 440px;
     font-size: 18px;
     margin: 0 auto;
-    background-color: #ecf0f1;
-    box-shadow: 0px 0px 10px indigo;
+    background-color: white;
+   
     text-align: center;
-    h1{
-       
-        font-size: 28px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
+   
     button{
-        background-color: #e74c3c;
-        color: white;
-        padding: 5px 10px;
-        font-size: 20px;
-        margin: 0 15px;
+       
+       
+        border: none;
+        outline: none;
     }
-    p{
-        padding-top: 10px;
-        padding-bottom: 10px;
+    
+}
+#start{
+  
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 2px solid #e74c3c ;
+    i{    
+      font-size: 28px;
+      color: #e74c3c;
     }
+}
+#stop{
+ 
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 2px solid #e74c3c ;
+    i{    
+      font-size: 28px;
+      color: #e74c3c;
+    }
+
+}
+.hide{
+    display: none !important;
+    i{
+        display: none !important;
+    }
+}
+.listen-text{
+    font-size: 24px;
+   
+    font-weight: 600 !important ;
+}
+.progress{
+    width: 100%;
+    height: 5vh;
+  
+    display: flex;
+    align-items: center;
+}
+.music{
+    width: 100%;
+    height: 50vh;
+    // background-color: blue;
+    &-audio{
+        width: 100%;
+        height: 30%;
+    }
+    &-show{
+        width: 100%;
+        height: 70%;
+    }
+   
+  &-lyric{
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &-ipa{
+      color: #c0392b;
+      font-size: 24px;
+      font-weight: 600;
+  }
+}
+.voice{
+    border-top: 1px solid #ccc;
+    width: 100%;
+    height: 30vh;
+    // background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.next{
+    width: 100%;
+    height: 15vh;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#nextbutton{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: #3498db;
+    padding: 15px 80px;
+    border-radius: 15px;
+}
+.progress-content{
+   
+    width: 100%;
+    height: 10px;
+}
+.progress-percent{
+    width: 10%;
+    height: 100%;
+    background-color: #3498db;
+}
+#musicplayer{
+    padding-top: 10px;
 }

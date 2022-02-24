@@ -1,11 +1,39 @@
+const data =[{
+    id:1,
+    lyric:`I can show you the world`,
+    ipa:`aɪ kæn ʃoʊ ju ðə wɜrld`
+},
+{
+    id:2,
+    lyric:`Shining, shimmering, splendid`,
+    ipa:`ˈʃaɪnɪŋ ˈʃɪmərɪŋ ˈsplɛndɪd`
+},
+{
+    id:3,
+    lyric:`Tell me, princess, now when did you last let your heart decide?`,
+    ipa:`tɛl mi, ˈprɪnsɛs, naʊ wɛn dɪd ju læst lɛt jʊər hɑrt 'dɪsaɪd`
+},
+{
+    id:4,
+    lyric:`I can open your eyes`,
+    ipa:`aɪ kæn ˈoʊpən jʊər aɪz`
+}]
+let idMusic=1;
+const getMusic=document.getElementById('musicplayer')
+getMusic.setAttribute('src',`./audio/${idMusic}.mp3`)
+const musictext=document.getElementById('music-text')
+document.querySelector('.music-lyric').innerHTML=data[idMusic-1].lyric
+
+
+document.querySelector('.music-ipa').innerHTML=data[idMusic-1].ipa
+
+const lengthaudio=document.getElementById('lengthaudio').innerHTML;
+document.getElementById('progress-percent').style.width=`${idMusic*100/lengthaudio}%`
+musictext.innerHTML=`Sentence: ${idMusic}`
+
 class VoiceRecorder{
  constructor(){
-     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
-         console.log("GET user media suported")
-     }
-     else{
-         console.log("Get user media NOT suported")
-     }
+     
      this.mediaRecoder
      this.stream
      this.chunks=[]
@@ -51,7 +79,8 @@ class VoiceRecorder{
 
     if(this.isRecording) return
     this.isRecording=true
-    this.startRef.innerHTML="Recording ..."
+    this.startRef.classList.add('hide')
+    this.stopRef.classList.remove('hide')
     this.playerRef.src=''
     navigator.mediaDevices.getUserMedia(this.constraints)
     .then(this.handleSucess.bind(this))
@@ -61,9 +90,21 @@ class VoiceRecorder{
 
     if(!this.isRecording) return
     this.isRecording=false
-    this.startRef.innerHTML="Record"
+    this.startRef.classList.remove('hide')
+    this.stopRef.classList.add('hide')
     this.recorderRef.pause()
     this.mediaRecorder.stop()
  }
 }
 window.VoiceRecorder=new VoiceRecorder()
+
+
+function handleNext(){
+    idMusic=idMusic+1;
+    getMusic.setAttribute('src',`./audio/${idMusic}.mp3`)
+    musictext.innerHTML=`Sentence: ${idMusic}`
+    document.getElementById('progress-percent').style.width=`${idMusic*100/lengthaudio}%`
+    document.querySelector('.music-lyric').innerHTML=data[idMusic-1].lyric
+
+document.querySelector('.music-ipa').innerHTML=data[idMusic-1].ipa
+}

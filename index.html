@@ -5,21 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
    <div class="app">
-       <h1>VOICE RECORDING APP</h1>
-       <p>Recorder</p>
-       <audio id="recorder" muted hidden></audio>
-       <div>
-           <button id="start">Record</button>
-           <button id="stop">Stop recording</button>
+     
+      <div class="progress">
+          <div class="progress-content">
+            <div class="progress-percent" id="progress-percent">
+              
+            </div>
+          </div>
 
+      </div>
+      <div class="music">
+        <div class="music-audio">
+            <div class="listen-text" id="music-text"></div>
+            <audio src="./audio/1.mp3" id="musicplayer" controls></audio>
+            
+        </div>
+        <div class="music-show">
+            <div class="music-lyric">
+               
+            </div>
+            <div class="music-ipa">
+               
+            </div>
+        </div>
+       
+      </div>
+      <div class="voice">
+        <audio id="recorder" muted hidden></audio>
+       
+           <button id="start">
+            <i class="fa-solid fa-microphone"></i>
+
+           </button>
+           <button id="stop" class="hide">
+            <i class="fa-solid fa-pause "></i>
+           </button>
+
+      
+       <div class="listen-text">Listening your voice</div>
+       <audio id="player" controls controlsList="nodownload"></audio>
+      </div>
+       <div class="next">
+            <div id="nextbutton" onclick="handleNext()">NEXT</div>
        </div>
-       <p>Listening your voice</p>
-       <audio id="player" controls></audio>
    </div>
+   <!-- data -->
+   <div id="lengthaudio" style="display: none;">4</div>
     <script src="./main.js"></script>
 </body>
 </html>
